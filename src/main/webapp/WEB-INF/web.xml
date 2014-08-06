@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <servlet>
+        <servlet-name>PojoServlet</servlet-name>
+        <servlet-class>home.basic.servlet.PojoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PojoServlet</servlet-name>
+        <url-pattern>/api/pojo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DefaultServletReaderConfig</servlet-name>
+        <servlet-class>com.wordnik.swagger.servlet.config.DefaultServletReaderConfig</servlet-class>
+        <load-on-startup>2</load-on-startup>
+        <init-param>
+            <param-name>swagger.resource.package</param-name>
+            <param-value>home.basic.servlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>swagger.api.basepath</param-name>
+            <param-value>http://localhost:8080/api</param-value>
+        </init-param>
+        <init-param>
+            <param-name>api.version</param-name>
+            <param-value>1.0.0</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ApiDeclarationServlet</servlet-name>
+        <servlet-class>com.wordnik.swagger.servlet.listing.ApiDeclarationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApiDeclarationServlet</servlet-name>
+        <url-pattern>/api-docs/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.gif</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
+</web-app>
